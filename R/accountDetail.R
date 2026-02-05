@@ -43,7 +43,9 @@ accountDetailUI_left <- function() {
 
   res <- tagList(
     tsui::mdl_date(id = 'date_startDate',label = '开始日期'),
-    tsui::mdl_date(id = 'date_endDate',label = '结束日期')
+    tsui::mdl_date(id = 'date_endDate',label = '结束日期'),
+    shiny::actionButton(inputId = 'btn_accountDetail_query',label = '查询'),
+    tsui::mdl_download_button(id = 'dl_accountDetail',label = '下载数据')
 
 
   )
@@ -61,9 +63,11 @@ accountDetailUI_left <- function() {
 #' accountDetailUI_bottom()
 accountDetailUI_right <- function() {
   res <- tagList(
+    tsui::mdl_date(id = 'text_bankAcntState_StartDate',label ='开始日期' ),
+    tsui::mdl_date(id = 'text_bankAcntState_EndDate',label ='结束日期' ),
+    shiny::actionButton(inputId = 'btn_bankAcntState_view',label = '将银行流水回写至ERP出纳管理模块银行对账单')
 
-    shiny::actionButton(inputId = 'btn_accountDetail_query',label = '查询'),
-    tsui::mdl_download_button(id = 'dl_accountDetail',label = '下载数据')
+
   )
   return(res)
 
